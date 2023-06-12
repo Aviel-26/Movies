@@ -41,13 +41,7 @@ export default function About() {
 
       
       <button className='btnLog' onClick={handleHome}>Home</button>
-      <button className='btnLogout' onClick={handleSingout}>Singout</button>
-      
-
-
-
-
-
+      <button className='btnLogout-about' onClick={handleSingout}>Singout</button>
     </div>
   );
 };

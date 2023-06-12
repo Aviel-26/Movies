@@ -1,4 +1,4 @@
-.about{
+.home{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,29 +12,37 @@
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-.head{
+.title{
     font-family: "Times New Roman", Times, serif;
-    text-decoration: underline;
     text-decoration-style: solid;
 }
 
-.btnLog{
-    height: 30px;
-    width: 150px;
+.in{
+    border-radius: 10px;
+    padding: 7px; 
+    width: 200px;
+    height: 15px; 
+    margin-top: 10px;
+}
+
+.fav{
+    height: 20px;
+    width: 140px;
     color: rgb(6, 6, 6);
     background-color: rgba(51, 249, 2, 0.953);
     border-radius: 25px;
     margin-left: 20px;
     margin-top: 10px;
+    
 }
 
-.btnLogout-about{
-    height: 30px;
-    width: 150px;
+.btnLogout-home{
+    height: 20px;
+    width: 140px;
     color: rgb(6, 6, 6);
     background-color: rgb(234, 33, 33);
     border-radius: 25px;
     margin-left: 20px;
     margin-top: 10px;
 }
+

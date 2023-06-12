@@ -1,0 +1,9 @@
+.back{
+    height: 20px;
+    width: 140px;
+    color: rgb(6, 6, 6);
+    background-color: rgba(51, 249, 2, 0.953);
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

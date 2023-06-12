@@ -8,6 +8,7 @@ import About from './Screens/About'
 import Signup from './Screens/Singup'
 import Login from './Screens/Login'
 import Home from './Screens/Home'
+import Favorite from './Screens/Favorite';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,9 +16,10 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path='/' element={<Login/>}/>
-      <Route path='/Singup' element={<Signup/>}/>
-      <Route path='/About' element={<About/>}/>
-      <Route path='/Home' element={<Home/>}/>
+      <Route path='/singup' element={<Signup/>}/>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/home' element={<Home/>}/>
+      <Route path='/favorite' element={<Favorite/>}/>
 
 
     </Routes>
