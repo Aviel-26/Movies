@@ -1,0 +1,71 @@
+.head{
+ margin-left: 105px;
+ margin-top: 15px;
+ font-family: "Times New Roman", Times, serif;
+ text-decoration: underline;
+text-decoration-style: solid;
+}
+.btn{
+
+    height: 30px;
+    width: 150px;
+    color: white;
+    background-color: rgba(2, 47, 249, 0.953);
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.login{
+    background-color: rgba(6, 217, 245, 0.473);
+    border-radius: 25px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 300px;
+    height: 250px;
+    border: 2px solid #f00a0a;
+    margin-top: 150px;
+    margin-left: 700px;
+}
+.list{
+    list-style-type: none;
+    margin-left: 25px;
+}
+.in{
+    border-radius: 25px;
+    padding: 7px; 
+    width: 150px;
+    height: 15px; 
+    margin-top: 10px;
+}
+
+.btnSout{
+    height: 30px;
+    width: 150px;
+    color: rgb(6, 6, 6);
+    background-color: rgba(51, 249, 2, 0.953);
+    border-radius: 25px;
+    margin-left: 74px;
+    
+
+}
+
+.btnSend{
+    height: 30px;
+    width: 150px;
+    color: white;
+    background-color: rgba(2, 47, 249, 0.953);
+    margin-left: 75px;
+    margin-top: 5px;
+    border-radius: 25px;
+}
+
+.HeadSup{
+    margin-left: 70px;
+    margin-top: 15px;
+    font-family: "Times New Roman", Times, serif;
+    text-decoration: underline;
+    text-decoration-style: solid;
+
+}
