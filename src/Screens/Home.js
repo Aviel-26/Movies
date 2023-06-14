@@ -6,9 +6,10 @@ import '../CSS/home.css'
 //imports for SignOut button
 import { useNavigate } from "react-router-dom"; 
 import { auth } from "../FireBaseAuth/firebase";
-import { getAuth, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 export default function Home() {
+  
   const [movies, setMovies] = useState([]);
   const [movieName, setMovieName] = useState("");
 
@@ -47,13 +48,6 @@ const handleSingout =(event) => {
     navigate("/favorite")
   }
 
-  const [favorites, setFavorites] = useState([]);
-
-  const handleAddMovie = (newMovie) => {
-    setFavorites((prevArray) => [...prevArray, newMovie]);
-    console.log(newMovie);
-  };
-
   return (
     <div>
       <div className="home">
@@ -67,6 +61,8 @@ const handleSingout =(event) => {
         />
         <button type="submit">Search 🔎</button>
       </form>
+
+      
       <button className="fav" type="text" onClick={goToFaorite}>Favorit Movie</button>
       <button className="btnLogout-home" type="text" onClick={handleSingout}>Sign Out</button>
       
@@ -74,19 +70,27 @@ const handleSingout =(event) => {
 
 
       <div className="showlist">
+      {/* <div> */}
       {movies.map((movie) => (
-        <div key={movie.id}>
+        <div className="size" key={movie.id}>
           <Movie
             id={movie.id}
             title={movie.title}
             description={movie.description}
-            img={movie.image}
-            onAddMovie={handleAddMovie}
+            image={movie.image}
           />
         </div>
       ))}
 
       </div>
+
+
+      {/* <Movie
+            id={"1666666"}
+            title={"Avengers"}
+            description={"WOW - WOW - WOW"}
+            image={"https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_Ratio0.6757_AL_.jpg"}
+          /> */}
     
     </div>
   );

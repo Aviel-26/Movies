@@ -9,14 +9,13 @@ import Signup from './Screens/Singup'
 import Login from './Screens/Login'
 import Home from './Screens/Home'
 import Favorite from './Screens/Favorite';
-import { listContext } from './Screens/Movie';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  
   <React.StrictMode>
     <BrowserRouter>
-    <listContext.Provider value={listContext}>
     <Routes>
       <Route path='/' element={<Login/>}/>
       <Route path='/singup' element={<Signup/>}/>
@@ -26,7 +25,6 @@ root.render(
 
 
     </Routes>
-    </listContext.Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

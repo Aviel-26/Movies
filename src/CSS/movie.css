@@ -1,6 +1,5 @@
 #movie{
-/* display: flex; */
-
+display: inline;
 height: 300px;
 width: 300px;
 text-align: center;

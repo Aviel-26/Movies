@@ -1,30 +1,40 @@
-
-import React, { useState, createContext } from 'react';
+import { useState } from 'react';
 import '../CSS/movie.css';
-
-export const listContext = createContext([]);
+import { addDoc, collection} from 'firebase/firestore';
+import {store} from '../FireBaseAuth/firebase'
+import { Auth } from "firebase/auth";
 
 export default function Movie(props) {
-  const [favorite, setFavorites] = useState([]);
 
-  const addMovie = (event) => {
-    event.preventDefault();
+  const handleSubmit = async(e) => {
+    e.preventDefault();
     
     const newMovie = {
-      id: props.id,
-      title: props.title,
-      description: props.description
-    };
-    setFavorites((prevArray) => [...prevArray, newMovie]);
-    props.onAddMovie(newMovie); // Call the function passed as prop
-    
-  };
+          id: props.id,
+          title: props.title,
+          image : props.image,
+          description: props.description
+        };
+
+        console.log(newMovie)
+
+    try{
+        // addDoc(collection, new document)
+        await addDoc(collection(store, 'favorites',), {
+          id: newMovie.id, title: newMovie.title, image: newMovie.image ,description : newMovie.description
+        })
+    }catch(error){
+        alert(error)
+    }
+  }
+
+
 
   return (
     <div id='movie'>
-      <form onSubmit={addMovie}>
+      <form onSubmit={handleSubmit}>
         <h2>{props.title}</h2>
-        <img src={props.img} alt="pc" />
+        <img src={props.image} alt="pc" />
         <p>{props.description}</p>
         <button className='add' type='submit'>Add</button>
       </form>
