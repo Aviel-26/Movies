@@ -14,6 +14,7 @@ export default function Home() {
 
   const navigate = useNavigate();
 
+  //Functions that call the API Movies with the name of the Movie
   const getMovie = (e) => {
     e.preventDefault();
     axios
@@ -27,15 +28,11 @@ export default function Home() {
       });
   };
 
-
-// 1)  https://imdb-api.com/en/API/SearchMovie/k_a1pmh7vm/${movieName}`) Before
-//  2)  https://imdb-api.com/en/API/SearchTitle/k_12345678/leon the professional
-
 const handleSingout =(event) => {
   event.preventDefault();
   signOut(auth)
   .then(() => {
-    navigate('/')
+    navigate('/Login')
   })
   .catch((error) => {
     console.log(error);
@@ -50,8 +47,16 @@ const handleSingout =(event) => {
     navigate("/favorite")
   }
 
+  const [favorites, setFavorites] = useState([]);
+
+  const handleAddMovie = (newMovie) => {
+    setFavorites((prevArray) => [...prevArray, newMovie]);
+    console.log(newMovie);
+  };
+
   return (
-    <div className="home">
+    <div>
+      <div className="home">
       <div className="title"><h1>Hello firstName, Search a movie</h1></div>
       <form onSubmit={getMovie}>
         <input className="in"
@@ -65,22 +70,24 @@ const handleSingout =(event) => {
       <button className="fav" type="text" onClick={goToFaorite}>Favorit Movie</button>
       <button className="btnLogout-home" type="text" onClick={handleSingout}>Sign Out</button>
       
+      </div>
 
-      {/* <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul> */}
 
+      <div className="showlist">
       {movies.map((movie) => (
         <div key={movie.id}>
           <Movie
             id={movie.id}
             title={movie.title}
             description={movie.description}
+            img={movie.image}
+            onAddMovie={handleAddMovie}
           />
         </div>
       ))}
+
+      </div>
+    
     </div>
   );
 }

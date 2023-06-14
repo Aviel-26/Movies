@@ -43,10 +43,11 @@ const SignupPage = () => {
     <ul className='list'>
       <li><input className='in' type="text" id="username" placeholder='Email' value={Email} onChange={handleEmailChange}/></li>
       <li><input className='in' type="password" id="password" value={password} placeholder='Password' onChange={handlePasswordChange}/></li>
+      
+    <li><button className='btnSend' on>send</button></li>
     </ul>
-    <button className='btnSend' on>send</button>
     </form>
-    <button className='btnLog' onClick={handleLogin}>Login</button>
+   <button className='btnLog' onClick={handleLogin}>Login</button>
     
   </div>
   );

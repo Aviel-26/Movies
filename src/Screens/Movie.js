@@ -1,27 +1,33 @@
-import React, { useState } from 'react'
-// context.js
-import { createContext } from 'react';
-export const Context = createContext('Default Value');
+
+import React, { useState, createContext } from 'react';
+import '../CSS/movie.css';
+
+export const listContext = createContext([]);
+
 export default function Movie(props) {
-  
-    const [favorite, setFavorites] =useState([]);
+  const [favorite, setFavorites] = useState([]);
+
+  const addMovie = (event) => {
+    event.preventDefault();
     
-    const addMovie = (props) => {
-        const newObject = {id: props.id, img: props.img, title: props.title };
-        
-        setFavorites((prevArray) => [...prevArray, newObject]);
-        Context = createContext(favorite)
-        
+    const newMovie = {
+      id: props.id,
+      title: props.title,
+      description: props.description
     };
-    return (
+    setFavorites((prevArray) => [...prevArray, newMovie]);
+    props.onAddMovie(newMovie); // Call the function passed as prop
     
-    <div className='movie'>
+  };
 
-        <h2> {props.title}</h2>
-        <img src={props.image} alt="pc"></img>
+  return (
+    <div id='movie'>
+      <form onSubmit={addMovie}>
+        <h2>{props.title}</h2>
+        <img src={props.img} alt="pc" />
         <p>{props.description}</p>
-        <button onClick={addMovie(props)}>add</button>
-
+        <button className='add' type='submit'>Add</button>
+      </form>
     </div>
-  )
+  );
 }

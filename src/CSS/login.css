@@ -15,13 +15,14 @@
 }
 
 .login{
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 600px;
+    margin: auto;
+    margin-top: 80px;
     padding: 20px;
     background-color: rgba(6, 217, 245, 0.473);
     border: 4px solid black;
@@ -48,7 +49,7 @@
     color: rgb(6, 6, 6);
     background-color: rgba(51, 249, 2, 0.953);
     border-radius: 25px;
-    margin-left: 74px;
+    margin-left: 90px;
 }
 
 .btnSend{
@@ -56,8 +57,7 @@
     width: 150px;
     color: white;
     background-color: rgba(2, 47, 249, 0.953);
-    margin-left: 75px;
-    margin-top: 5px;
+    margin-top: 10px;
     border-radius: 25px;
 }
 

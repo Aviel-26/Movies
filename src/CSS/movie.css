@@ -1,0 +1,32 @@
+#movie{
+/* display: flex; */
+
+height: 300px;
+width: 300px;
+text-align: center;
+margin-top: 60px;
+margin-left: 20px;
+
+
+}
+
+#movie img{
+    height: 200px;
+    width: 200px;
+}
+
+#movie h2{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-style: solid;
+
+}
+.add{
+        height: 20px;
+        width: 50px;
+        color: rgb(6, 6, 6);
+        background-color: rgba(27, 242, 250, 0.695);
+        border-radius: 25px;
+        margin-left: 20px;
+        margin-top: 10px;
+}
