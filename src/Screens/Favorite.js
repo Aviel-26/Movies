@@ -1,13 +1,15 @@
 import React, { useEffect }  from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation ,useNavigate } from 'react-router-dom';
 import '../CSS/favorite.css'
 import Movie from './Movie';
-import {store} from '../FireBaseAuth/firebase'
+import {store, app} from '../FireBaseAuth/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 import { useState } from 'react';
 
 
 export default function Favorite() {
+  
+  const location = useLocation();
 
 
   const [favorite, setFavorite] = useState([]);
@@ -16,7 +18,7 @@ export default function Favorite() {
 
     const getDB = async (db) => {
         // collection() - return all the collection for that path. 
-         const FavoriteCol = collection(db, 'favorites');
+         const FavoriteCol = collection(db, location.state);
          // getDocs() - return all documents for our collection
          const FavoriteSnapshot = await getDocs(FavoriteCol);
         
@@ -34,8 +36,8 @@ export default function Favorite() {
       },[favorite])
   
 
-
   const navigate = useNavigate();
+  
 
   return(
     <div>
@@ -44,7 +46,7 @@ export default function Favorite() {
       <button className='back' onClick={() => navigate(-1)}>return Home</button> 
     </div>
 
-    <div>
+    <div className="showlist">
          {favorite.length>0 && favorite.map((movie) => (
         <div key={movie.id}>
           <Movie

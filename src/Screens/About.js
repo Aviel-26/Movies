@@ -1,5 +1,5 @@
-import React from 'react'
-import {useNavigate} from 'react-router-dom';
+import React, { useState } from 'react'
+import {useLocation, useNavigate} from 'react-router-dom';
 import {auth} from '../FireBaseAuth/firebase';
 import { signOut  } from 'firebase/auth';
 import '../CSS/about.css';
@@ -7,6 +7,12 @@ import '../CSS/about.css';
 export default function About() {
   
     const navigate = useNavigate();
+    const location = useLocation();
+
+    console.log(location.state);
+    // const [data, setData] =useState();
+    // setData(location.state)
+    // console.log( data  + "  Data")
 
     const handleSingout =(event) => {
       event.preventDefault();
@@ -20,8 +26,9 @@ export default function About() {
     }
 
 
+
     const handleHome =() => {
-    navigate('/Home')
+    navigate('/Home' ,{state: location.state })
   }
   
   

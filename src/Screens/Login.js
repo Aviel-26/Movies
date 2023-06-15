@@ -11,6 +11,7 @@ const LoginPage = () => {
 
  const [Email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [uid, setUid] = useState('');
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -30,8 +31,9 @@ const LoginPage = () => {
     signInWithEmailAndPassword(auth,Email,password)
     .then((userCredential) => {
       console.log(userCredential);
-      navigate('/About' )
-      console.log( "user " + auth.currentUser  + "conected")
+      console.log( "user " + userCredential.user.uid  + "  conected: Hello nice user welcom to the web")
+      setUid(userCredential.user.uid);
+      navigate('/About', {state: userCredential.user.uid} )
 
     }).catch((error) => {
       console.log(error);
@@ -60,3 +62,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

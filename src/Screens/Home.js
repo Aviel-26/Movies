@@ -4,7 +4,7 @@ import Movie from "./Movie";
 import '../CSS/home.css'
 
 //imports for SignOut button
-import { useNavigate } from "react-router-dom"; 
+import { UNSAFE_LocationContext, useLocation, useNavigate } from "react-router-dom"; 
 import { auth } from "../FireBaseAuth/firebase";
 import { signOut } from "firebase/auth";
 
@@ -14,6 +14,7 @@ export default function Home() {
   const [movieName, setMovieName] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   //Functions that call the API Movies with the name of the Movie
   const getMovie = (e) => {
@@ -33,7 +34,7 @@ const handleSingout =(event) => {
   event.preventDefault();
   signOut(auth)
   .then(() => {
-    navigate('/Login')
+    navigate('/')
   })
   .catch((error) => {
     console.log(error);
@@ -45,13 +46,13 @@ const handleSingout =(event) => {
   };
 
   const goToFaorite = () => {
-    navigate("/favorite")
+    navigate("/favorite" , {state: location.state })
   }
 
   return (
     <div>
       <div className="home">
-      <div className="title"><h1>Hello firstName, Search a movie</h1></div>
+      <div className="title"><h1>Hello {location.state}, Search a movie</h1></div>
       <form onSubmit={getMovie}>
         <input className="in"
           id="txt"
@@ -78,6 +79,7 @@ const handleSingout =(event) => {
             title={movie.title}
             description={movie.description}
             image={movie.image}
+            uid= {location.state}
           />
         </div>
       ))}

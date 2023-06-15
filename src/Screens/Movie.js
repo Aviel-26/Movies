@@ -3,8 +3,10 @@ import '../CSS/movie.css';
 import { addDoc, collection} from 'firebase/firestore';
 import {store} from '../FireBaseAuth/firebase'
 import { Auth } from "firebase/auth";
+import { useLocation } from 'react-router-dom';
 
 export default function Movie(props) {
+
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ export default function Movie(props) {
 
     try{
         // addDoc(collection, new document)
-        await addDoc(collection(store, 'favorites',), {
+        await addDoc(collection(store, props.uid,), {
           id: newMovie.id, title: newMovie.title, image: newMovie.image ,description : newMovie.description
         })
     }catch(error){
