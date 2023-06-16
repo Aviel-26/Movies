@@ -9,6 +9,7 @@ import { auth } from "../FireBaseAuth/firebase";
 import { signOut } from "firebase/auth";
 
 export default function Home() {
+  console.log("Enter Home")
   
   const [movies, setMovies] = useState([]);
   const [movieName, setMovieName] = useState("");
@@ -84,16 +85,7 @@ const handleSingout =(event) => {
         </div>
       ))}
 
-      </div>
-
-
-      {/* <Movie
-            id={"1666666"}
-            title={"Avengers"}
-            description={"WOW - WOW - WOW"}
-            image={"https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_Ratio0.6757_AL_.jpg"}
-          /> */}
-    
+      </div>    
     </div>
   );
 }

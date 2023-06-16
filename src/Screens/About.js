@@ -9,7 +9,7 @@ export default function About() {
     const navigate = useNavigate();
     const location = useLocation();
 
-    console.log(location.state);
+    console.log( "userUID: "  + location.state);
     // const [data, setData] =useState();
     // setData(location.state)
     // console.log( data  + "  Data")

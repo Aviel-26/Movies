@@ -2,15 +2,15 @@ import React, { useEffect }  from 'react'
 import { useLocation ,useNavigate } from 'react-router-dom';
 import '../CSS/favorite.css'
 import Movie from './Movie';
-import {store, app} from '../FireBaseAuth/firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import {store} from '../FireBaseAuth/firebase'
+import { collection, deleteDoc, doc, documentId, getDoc, getDocs } from 'firebase/firestore'
 import { useState } from 'react';
 
 
 export default function Favorite() {
+  console.log("Enter Favorite")
   
   const location = useLocation();
-
 
   const [favorite, setFavorite] = useState([]);
   
@@ -33,44 +33,48 @@ export default function Favorite() {
         }
        // call the function: 
        getDB(store);
-      },[favorite])
-  
+      },[])
+
+      
+    const handleDelete = async(movie) => {
+
+      const movieDocRef = doc(store, location.state, movie.id)
+      console.log("documentId that will be deleted: " + movie.id)
+
+      try{
+        await deleteDoc(movieDocRef)
+        console.log("delete  " + movieDocRef + " success " )
+        window.location.reload(); // Reload the page
+      }
+      catch(error){ console.log("deleted " + movieDocRef + " failed")}
+    }      
 
   const navigate = useNavigate();
   
-
   return(
     <div>
     <div>
       <h1>Favorite</h1>
       <button className='back' onClick={() => navigate(-1)}>return Home</button> 
-    </div>
+    </  div>
 
     <div className="showlist">
+      
          {favorite.length>0 && favorite.map((movie) => (
         <div key={movie.id}>
+          
           <Movie
             id={movie.data.id}
             title={movie.data.title}
             description={movie.data.description}
             image={movie.data.image}
           />
+          <button onClick={() => handleDelete(movie)}>delete</button>
         </div>
         ))}
-     </div>
-
-            <Movie
-            id={"123445"}
-            title={"Dragon-Ball-Z"}
-            description={"nice movie"}
-            image={"https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_Ratio0.6757_AL_.jpg"}
-          />
-
-
-
-    
+     </div>    
     </div>
-
-
   )
 }
+
+

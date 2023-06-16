@@ -25,12 +25,11 @@ export default function Movie(props) {
         await addDoc(collection(store, props.uid,), {
           id: newMovie.id, title: newMovie.title, image: newMovie.image ,description : newMovie.description
         })
+        console.log("props uid " + props.uid)
     }catch(error){
         alert(error)
     }
   }
-
-
 
   return (
     <div id='movie'>
