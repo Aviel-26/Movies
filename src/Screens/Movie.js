@@ -34,9 +34,9 @@ export default function Movie(props) {
   return (
     <div id='movie'>
       <form onSubmit={handleSubmit}>
-        <h2>{props.title}</h2>
+        <h2 className='title-movie'>{props.title}</h2>
         <img src={props.image} alt="pc" />
-        <p>{props.description}</p>
+        <p className='desc-movie'>{props.description}</p>
         <button className='add' type='submit'>Add</button>
       </form>
     </div>

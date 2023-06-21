@@ -5,6 +5,8 @@ import Movie from './Movie';
 import {store} from '../FireBaseAuth/firebase'
 import { collection, deleteDoc, doc, documentId, getDoc, getDocs } from 'firebase/firestore'
 import { useState } from 'react';
+import { auth } from '../FireBaseAuth/firebase';
+import { signOut } from 'firebase/auth';
 
 
 export default function Favorite() {
@@ -47,16 +49,28 @@ export default function Favorite() {
         window.location.reload(); // Reload the page
       }
       catch(error){ console.log("deleted " + movieDocRef + " failed")}
-    }      
+    }
+    
+    const handleSingout =(event) => {
+      event.preventDefault();
+      signOut(auth)
+      .then(() => {
+        navigate('/')
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
 
   const navigate = useNavigate();
   
   return(
     <div>
-    <div>
+    <div className='title-fav'>
       <h1>Favorite</h1>
-      <button className='back' onClick={() => navigate(-1)}>return Home</button> 
-    </  div>
+      <button className='back' onClick={() => navigate(-1)}>return Home</button>
+      <button className='signOut' onClick={handleSingout} >Sign Out</button> 
+    </div>
 
     <div className="showlist">
       
@@ -69,7 +83,7 @@ export default function Favorite() {
             description={movie.data.description}
             image={movie.data.image}
           />
-          <button onClick={() => handleDelete(movie)}>delete</button>
+          <button className='delete' onClick={() => handleDelete(movie)}>delete</button>
         </div>
         ))}
      </div>    

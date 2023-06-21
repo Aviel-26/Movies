@@ -53,7 +53,7 @@ const handleSingout =(event) => {
   return (
     <div>
       <div className="home">
-      <div className="title"><h1>Hello {location.state}, Search a movie</h1></div>
+      <div className="title"><h1>Hello, Search a movie</h1></div>
       <form onSubmit={getMovie}>
         <input className="in"
           id="txt"

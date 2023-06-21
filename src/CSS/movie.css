@@ -5,8 +5,13 @@ width: 300px;
 text-align: center;
 margin-top: 60px;
 margin-left: 20px;
-
-
+justify-content: space-between;
+}
+.title-movie{
+    font-size: 20px;
+}
+.desc-movie{
+    font-size: 13px;
 }
 
 #movie img{
@@ -21,11 +26,11 @@ margin-left: 20px;
 
 }
 .add{
-        height: 20px;
-        width: 50px;
-        color: rgb(6, 6, 6);
-        background-color: rgba(27, 242, 250, 0.695);
-        border-radius: 25px;
-        margin-left: 20px;
-        margin-top: 10px;
+    height: 20px;
+    width: 50px;
+    color: rgb(6, 6, 6);
+    background-color: rgba(27, 242, 250, 0.695);
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
