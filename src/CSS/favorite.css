@@ -1,7 +1,7 @@
 .title-fav{
-    margin-left: auto;
-    margin-right: auto;
-    width: 8em;    
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
 .signOut{
     height: 20px;
@@ -26,11 +26,24 @@
     height: 100px;
 }
 .delete{
-    height: 20px;
-    width: 125px;
-    color: rgb(6, 6, 6);
-    background-color: rgb(234, 33, 33);
-    border-radius: 25px;
-    margin-left: 20px;
-    margin-top: 10px;
+    height: 22px;
+  width: 55px;
+  color: rgb(6, 6, 6);
+  background-color: rgb(234, 33, 33);
+  border-radius: 25px;
+  margin-left: 20px;
 }
+.showlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .size {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+  
+  

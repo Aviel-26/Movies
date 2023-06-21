@@ -67,7 +67,6 @@ const handleSingout =(event) => {
       
       <button className="fav" type="text" onClick={goToFaorite}>Favorit Movie</button>
       <button className="btnLogout-home" type="text" onClick={handleSingout}>Sign Out</button>
-      
       </div>
 
 
