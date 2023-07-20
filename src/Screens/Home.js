@@ -21,7 +21,7 @@ export default function Home() {
   const getMovie = (e) => {
     e.preventDefault();
     axios
-      .get(`https://imdb-api.com/en/API/SearchMovie/k_a1pmh7vm/${movieName}`)
+      .get(`https://imdb-api.com/en/API/SearchMovie/{API_key}/${movieName}`)
       .then((response) => {
         console.log(response.data);
         setMovies(response.data.results);
