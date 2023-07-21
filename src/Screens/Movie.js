@@ -32,6 +32,7 @@ export default function Movie(props) {
 
   return (
     <div id='movie'>
+<<<<<<< HEAD
     <h2>{props.title}</h2>
     <img src={imageUrl} alt='pc' />
     <p>{props.overview}</p>
@@ -42,5 +43,14 @@ export default function Movie(props) {
       <button className='delete' onClick={props.handleDelete}>{props.button}</button>
     )}
   </div>
+=======
+      <form onSubmit={handleSubmit}>
+        <h2 className='title-movie'>{props.title}</h2>
+        <img src={props.image} alt="pc" />
+        <p className='desc-movie'>{props.description}</p>
+        <button className='add' type='submit'>Add</button>
+      </form>
+    </div>
+>>>>>>> e64bc8f3d34194f0a46c6158564679b9c2dd6849
   );
 }

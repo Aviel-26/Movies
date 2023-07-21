@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .favorite {
   display: flex;
   flex-direction: column;
@@ -69,3 +70,54 @@
 .showlist .delete:hover {
   background-color: rgba(234, 33, 33, 1);
 }
+=======
+.title-fav{
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.signOut{
+    height: 20px;
+    width: 125px;
+    color: rgb(6, 6, 6);
+    background-color: rgb(234, 33, 33);
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.back{
+    height: 23px;
+    width: 125px;
+    color: rgb(6, 6, 6);
+    background-color: rgba(51, 249, 2, 0.953);
+    border-radius: 25px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.movie-fav{
+    max-width: 100px;
+    height: 100px;
+}
+.delete{
+    height: 22px;
+  width: 55px;
+  color: rgb(6, 6, 6);
+  background-color: rgb(234, 33, 33);
+  border-radius: 25px;
+  margin-left: 20px;
+}
+.showlist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .size {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+  }
+  
+  
+>>>>>>> e64bc8f3d34194f0a46c6158564679b9c2dd6849
