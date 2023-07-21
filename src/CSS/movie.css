@@ -1,31 +1,55 @@
-#movie{
-display: inline;
-height: 300px;
-width: 300px;
-text-align: center;
-margin-top: 60px;
-margin-left: 20px;
-
-
+#movie {
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#movie img{
-    height: 200px;
-    width: 200px;
+#movie img {
+  height: 200px;
+  width: 150px;
+  border-radius: 8px;
+  margin: 10px auto;
+  object-fit: cover;
 }
 
-#movie h2{
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-style: solid;
-
+#movie h2 {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px;
 }
-.add{
-        height: 20px;
-        width: 50px;
-        color: rgb(6, 6, 6);
-        background-color: rgba(27, 242, 250, 0.695);
-        border-radius: 25px;
-        margin-left: 20px;
-        margin-top: 10px;
+
+#movie p {
+  font-size: 14px;
+  height: 75px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+}
+
+#movie .add {
+  height: 30px;
+  width: 80px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: rgba(27, 242, 250, 0.695);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  margin: auto; /* Center the button horizontally */
+}
+
+#movie .add:hover {
+  background-color: rgba(118, 243, 247, 0.9);
 }

@@ -47,6 +47,7 @@ const SignupPage = () => {
     <li><button className='btnSend' on>send</button></li>
     </ul>
     </form>
+  
    <button className='btnLog' onClick={handleLogin}>Login</button>
     
   </div>
