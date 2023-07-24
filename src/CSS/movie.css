@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #movie {
   display: flex;
   flex-direction: column;
@@ -11,22 +10,6 @@
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-=======
-#movie{
-display: inline;
-height: 300px;
-width: 300px;
-text-align: center;
-margin-top: 60px;
-margin-left: 20px;
-justify-content: space-between;
-}
-.title-movie{
-    font-size: 20px;
-}
-.desc-movie{
-    font-size: 13px;
->>>>>>> e64bc8f3d34194f0a46c6158564679b9c2dd6849
 }
 
 #movie img {
@@ -43,7 +26,6 @@ justify-content: space-between;
   text-decoration: underline;
   margin-bottom: 10px;
 }
-<<<<<<< HEAD
 
 #movie p {
   font-size: 14px;
@@ -70,14 +52,4 @@ justify-content: space-between;
 
 #movie .add:hover {
   background-color: rgba(118, 243, 247, 0.9);
-=======
-.add{
-    height: 20px;
-    width: 50px;
-    color: rgb(6, 6, 6);
-    background-color: rgba(27, 242, 250, 0.695);
-    border-radius: 25px;
-    margin-left: 20px;
-    margin-top: 10px;
->>>>>>> e64bc8f3d34194f0a46c6158564679b9c2dd6849
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS/movie.css';
-import { addDoc, collection, deleteDoc, doc } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 import { store } from '../FireBaseAuth/firebase';
 
 export default function Movie(props) {
@@ -32,25 +32,19 @@ export default function Movie(props) {
 
   return (
     <div id='movie'>
-<<<<<<< HEAD
-    <h2>{props.title}</h2>
-    <img src={imageUrl} alt='pc' />
-    <p>{props.overview}</p>
-    {props.button === 'Add' && (
-      <button className='add' type='submit' onClick={handleAdd}>{props.button}</button>
-    )}
-    {props.button === 'Delete' && (
-      <button className='delete' onClick={props.handleDelete}>{props.button}</button>
-    )}
-  </div>
-=======
-      <form onSubmit={handleSubmit}>
-        <h2 className='title-movie'>{props.title}</h2>
-        <img src={props.image} alt="pc" />
-        <p className='desc-movie'>{props.description}</p>
-        <button className='add' type='submit'>Add</button>
-      </form>
+      <h2>{props.title}</h2>
+      <img src={imageUrl} alt='pc' />
+      <p>{props.overview}</p>
+      {props.button === 'Add' && (
+        <button className='add' type='submit' onClick={handleAdd}>
+          {props.button}
+        </button>
+      )}
+      {props.button === 'Delete' && (
+        <button className='delete' onClick={props.handleDelete}>
+          {props.button}
+        </button>
+      )}
     </div>
->>>>>>> e64bc8f3d34194f0a46c6158564679b9c2dd6849
   );
 }
